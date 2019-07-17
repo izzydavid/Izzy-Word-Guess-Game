@@ -14,49 +14,84 @@
   color: ivory; 
 }
 
+#playButton:hover{ 
+  border-style: dotted;  
+  color: white; 
+  max-width: 330px;
+  max-height: 275px; 
+
+}
 #animeTitle{ 
   font-family: 'Dancing Script', cursive;
   font-size: 200px; 
   position: relative;
-  bottom: 100px; 
+  bottom: 0px; 
   left: 200px; 
   color: ivory; 
 }
 
+#animePick{ 
+  font-family: 'Dancing Script', cursive;
+  font-size: 100px; 
+  position: relative;
+  bottom: -100px; 
+  left: 200px; 
+  color: ivory; 
+}
+
+
 #blanks { 
   font-size: 100px; 
   color: ivory; 
-  bottom: 150px; 
-  left: 500px; 
+  bottom: -50px; 
+  left: 600px; 
   position: relative;
 
 }
 
 strong { 
-  bottom: 100px; 
+  bottom: -100px; 
   padding: 20px;
-  left: 525px; 
+  left: 500px; 
   position: relative;
   color: ivory; 
   font-size: 25px; 
 
 }
 #myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
+  width: 500px;
+  font-size: 35px;
   color: #fff;
   cursor: pointer;
+  position: relative;
+  bottom: -200px;
+  left: 300px;  
+  float: left;
+  background: transparent;
+  
+}
+
+#myBtn2 {
+  width: 500px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2px;
+  position: relative;
+  bottom: -200px;
+  left: 400px;  
+  background: transparent; 
 }
 
 #myBtn:hover {
+  background: white;
+  color: black;
+}
+#myBtn2:hover {
   background: #ddd;
   color: black;
 }
 * { 
-  /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {...} 
   
   /* Small devices (portrait tablets and large phones, 600px and up) */

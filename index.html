@@ -13,19 +13,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link rel="stylesheet" href="../Word-Guess-Game/assets/css/style.css">
 
 </head>
 
 <body>
 
-    <video playsinline autoplay id="video">
-        <source src="../Word-Guess-Game/assets/videos/windrises_final-Apple Devices 4K.m4v">
+    <video playsinline autoplay muted id="video">
+        <source src="../Word-Guess-Game/assets/videos/windrises_final.m4v">
     </video>
 
     <p id="playButton">Play</p>
     <h2 id="animeTitle">Guess that Anime!</h2>
-    <p id = "myBtn"> Guess a Show or Movie </p>
+    <h2 id="animePick">What Kind of Anime do you Watch?</h2>
+
+    <a id = "myBtn" class="waves-effect waves-light btn"><i class="material-icons center">Shows</i></a>
+    <a id = "myBtn2" class="waves-effect waves-light btn"><i class="material-icons center">Movies</i></a>
     <h1 id="blanks">_ _ _ _ _ _ _ _ _ </h1>
     <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
     <strong>Guesses Left: </strong> <span id="guesses-left"></span>
@@ -37,5 +42,6 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Code to the JavaScript File -->
 <script src="../Word-Guess-Game/assets/javascript/anime.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </html>
