@@ -1,0 +1,74 @@
+#video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+#playButton{ 
+  font-family: 'Dancing Script', cursive;
+  font-size: 200px; 
+  position: relative;
+  bottom: -100px; 
+  left: 700px; 
+  color: ivory; 
+}
+
+#animeTitle{ 
+  font-family: 'Dancing Script', cursive;
+  font-size: 200px; 
+  position: relative;
+  bottom: 100px; 
+  left: 200px; 
+  color: ivory; 
+}
+
+#blanks { 
+  font-size: 100px; 
+  color: ivory; 
+  bottom: 150px; 
+  left: 500px; 
+  position: relative;
+
+}
+
+strong { 
+  bottom: 100px; 
+  padding: 20px;
+  left: 525px; 
+  position: relative;
+  color: ivory; 
+  font-size: 25px; 
+
+}
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+* { 
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {...} 
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {...} 
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {...} 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {...} 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {...}
+  
+}
