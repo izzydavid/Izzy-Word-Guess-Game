@@ -1,16 +1,23 @@
 #video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
   min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 #playButton{ 
   font-family: 'Dancing Script', cursive;
   font-size: 200px; 
-  position: relative;
-  bottom: -100px; 
-  left: 700px; 
+  position: absolute;
+  top: 10%;
+  left: 40%;
   color: ivory; 
 }
 
@@ -20,39 +27,40 @@
   max-width: 330px;
   max-height: 275px; 
 
+
 }
-#animeTitle{ 
+#animeTitle, #animeTitle2 { 
   font-family: 'Dancing Script', cursive;
-  font-size: 200px; 
+  font-size: 150px; 
   position: relative;
   bottom: 0px; 
-  left: 200px; 
+  left: 0; 
   color: ivory; 
 }
 
 #animePick{ 
   font-family: 'Dancing Script', cursive;
-  font-size: 100px; 
+  font-size: 75px; 
   position: relative;
   bottom: -100px; 
-  left: 200px; 
+  left: 175px; 
   color: ivory; 
 }
 
 
 #blanks { 
-  font-size: 100px; 
+  font-size: 50px; 
   color: ivory; 
-  bottom: -50px; 
-  left: 600px; 
+  bottom: 0; 
+  left: 40%; 
   position: relative;
-
+  width: 275px;
+  display: inline-flexbox;  
 }
 
 strong { 
   bottom: -100px; 
-  padding: 20px;
-  left: 500px; 
+  left: 30%; 
   position: relative;
   color: ivory; 
   font-size: 25px; 
@@ -65,9 +73,8 @@ strong {
   cursor: pointer;
   position: relative;
   bottom: -200px;
-  left: 300px;  
+  left: 0;  
   float: left;
-  background: transparent;
   
 }
 
@@ -79,31 +86,63 @@ strong {
   z-index: 2px;
   position: relative;
   bottom: -200px;
-  left: 400px;  
-  background: transparent; 
+  left: 15%;  
 }
 
-#myBtn:hover {
-  background: white;
-  color: black;
+#myBtn3{
+  font-size: 1px;
+  color: white;
+  cursor: pointer;
+  z-index: 2px;
+  position: relative;
+  bottom: 0;
+  left: -175px;  
+  padding: 10px; 
 }
-#myBtn2:hover {
-  background: #ddd;
-  color: black;
+
+#myBtn:hover, #myBtn2:hover, #myBtn3:hover{
+  background:black;
+  color: white;
 }
-* { 
-  @media only screen and (max-width: 600px) {...} 
-  
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {...} 
-  
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {...} 
-  
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {...} 
-  
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {...}
-  
+
+
+.g-scrolling-carousel .items{
+  padding: 5px 0;
+  z-index: 2px;
 }
+.g-scrolling-carousel .items a{
+  display: inline-block; /* notice the comments between inline-block items */
+  margin-right: 10px;
+  width: 70px;
+  height: 50px;
+  box-shadow: 0 0 5px #000;
+  text-align: center;
+  z-index: 2px;
+  background: white; 
+  position: relative; 
+  bottom: 0; 
+  left: 20px; 
+
+}
+
+.card-image{ 
+  width: 100px; 
+  height: 100px;
+  }
+
+  .card-image:hover { 
+  }
+
+  .card { 
+    width: 100px; 
+    height: 150px;
+    float: left; 
+    font-size: 10px; 
+    margin: 0; 
+    bottom: -500px;
+    left: 25px;  
+  }
+  .card-title { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+  }
+
