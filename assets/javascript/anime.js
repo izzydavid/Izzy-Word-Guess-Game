@@ -10,6 +10,18 @@ function toggleMute() {
   
   }
 
+function Play() {
+
+	var video=document.getElementById("#video");
+  
+	if(video.play){
+	  video.play = false;
+	} else {
+	  video.play = true;
+	}
+  
+  }
+
 $('#playButton').hide();
 $('strong').hide();
 $('#blanks').hide();
