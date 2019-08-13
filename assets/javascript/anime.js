@@ -9,7 +9,7 @@ $('.btn').hide();
 $('h1').hide();
 
 $('#animePick').hide();
-$('#playButton').delay(200).fadeIn('slow');
+$('#playButton').delay(26000).fadeIn('slow');
 
 
 $("#playButton").on("click", function () {
@@ -69,7 +69,7 @@ $("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
 
 	// Constructing a queryURL using the anime name
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-		anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&rating=g&limit=10";
+		anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=60";
 
 	// Performing an AJAX request with the queryURL
 	$.ajax({
@@ -83,25 +83,48 @@ $("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
 
 
 				//Start of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 60; i++) {
 					console.log(response.data[i].images.original.url);
 
 					$('.g-scrolling-carousel').prepend(`
 					<div class="card-panel"> 
-						<img class="card-image materialboxed hoverable" src = '${response.data[i].images.original.url}'
+						<img class="card-image materialboxed " src = '${response.data[i].images.original_still.url}'
+						'animated-gif'= '${response.data[i].images.original.url}'
+						'static-gif' = '${response.data[i].images.original_still.url}'
 						<div class="card-reveal"> 
 						<span class="card-title activator grey-text text-darken-4" src = '${response.data[i].title}'><i class="material-icons right"></i></span>
 						<div class="card-action"> <a href="${response.data[i].url}" target="_blank">Click Here</a>
 						</div>
 						</div>			
-						</div>`)};			
+						</div>
+					`)};			
 			//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
 
-			//Start of MouseEnter and MouseLeave Enter Events
-			$(".card").on('click', function () {
-				$(this).attr("src", $(this).attr("animatedImage"));
-			});
 
+			//Start of MouseEnter and MouseLeave Enter Events
+					animate(function() {
+					$(".card-image").mouseenter(
+					$(this).attr("src", "animated-gif")
+					)}
+					);
+					still(function() {
+					$(".card-image").mouseleave(
+					$(this).attr("src", "static-gif")
+					)	
+					});                
+			
+				// $(document).ready(function(){
+				// 	$(".card-image").find('img').mouseenter(function(){
+				// 	  if($("#imgAnimate").attr('src','form.jpg')){
+				// 		  $("#imgAnimate").attr('src','form.gif');
+				// 	  }
+				// 	  $(this).mouseleave(function(){
+				// 		  if($("#imgAnimate").attr('src','form.gif')){
+				// 		  $("#imgAnimate").attr('src','form.jpg');
+				// 	  }
+				// 	  });
+				// 	});
+				//   });
 			//End of MouseEnter and MouseLeave Enter Events
 			$('.materialboxed').materialbox();
 			$('h1').scroll();
@@ -109,3 +132,72 @@ $("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
 
 		});
 });
+
+
+
+var animate = function () {
+    var drawMe = lives ;
+    drawArray[drawMe]();
+  }
+
+canvas =  function(){
+
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = "#fff";
+    context.lineWidth = 2;
+  };
+  
+    head = function(){
+      myStickman = document.getElementById("stickman");
+      context = myStickman.getContext('2d');
+      context.beginPath();
+      context.arc(60, 25, 10, 0, Math.PI*2, true);
+      context.stroke();
+    }
+    
+  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+    
+    context.moveTo($pathFromx, $pathFromy);
+    context.lineTo($pathTox, $pathToy);
+    context.stroke(); 
+}
+
+   frame1 = function() {
+     draw (0, 150, 150, 150);
+   };
+   
+   frame2 = function() {
+     draw (10, 0, 10, 600);
+   };
+  
+   frame3 = function() {
+     draw (0, 5, 70, 5);
+   };
+  
+   frame4 = function() {
+     draw (60, 5, 60, 15);
+   };
+  
+   torso = function() {
+     draw (60, 36, 60, 70);
+   };
+  
+   rightArm = function() {
+     draw (60, 46, 100, 50);
+   };
+  
+   leftArm = function() {
+     draw (60, 46, 20, 50);
+   };
+  
+   rightLeg = function() {
+     draw (60, 70, 100, 100);
+   };
+  
+   leftLeg = function() {
+     draw (60, 70, 20, 100);
+   };
+  
+  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 

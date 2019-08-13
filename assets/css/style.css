@@ -114,8 +114,7 @@ strong {
   height: 200px;
   }
 
-  .card-image:hover { 
-  }
+
 
   .card-panel { 
     width: 200px; 
@@ -124,7 +123,6 @@ strong {
     position: relative;
     left: 50px;  
     display: inline-table; 
-    font-size: ; 
   }
   .card-action { 
     bottom: -10px;
