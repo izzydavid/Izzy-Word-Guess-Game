@@ -64,6 +64,28 @@ $("#myBtn2").on("click", function () {
 
 });
 
+var start = appStart({
+	getInitialState: function() {
+		return {
+			alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" , "@","-"],
+			words: '',
+			randomWord: '',
+			letters: [],
+			clickedLetters:[],
+			matchedLetters: [],
+			lives:6,
+			initialLives:6,
+			clickedButton:null,
+			gameStarted:false,
+			nextWord:false,
+			chosenLevel:'medium',
+			score:0,
+			gameOver:false
+		}
+	},
+}); 
+
+
 var animeShows = ["death note", "monster", "rurouni kenshin", "pokemon", "trigun",
 	"naruto", "cowboy bepop", "evangelion", "dragon ball z", "flcl"
 ];
