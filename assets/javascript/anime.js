@@ -1,4 +1,4 @@
-function toggleMute() {
+ffunction toggleMute() {
 
 	var video=document.getElementById("#video");
   
@@ -9,19 +9,6 @@ function toggleMute() {
 	}
   
   }
-
-function Play() {
-
-	var video=document.getElementById("#video");
-  
-	if(video.play){
-	  video.play = false;
-	} else {
-	  video.play = true;
-	}
-  
-  }
-
 $('#playButton').hide();
 $('strong').hide();
 $('#blanks').hide();
@@ -76,6 +63,28 @@ $("#myBtn2").on("click", function () {
 	$('#myBtn6').delay(200).fadeIn('slow');
 
 });
+
+var start = appStart({
+	getInitialState: function() {
+		return {
+			alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" , "@","-"],
+			words: '',
+			randomWord: '',
+			letters: [],
+			clickedLetters:[],
+			matchedLetters: [],
+			lives:6,
+			initialLives:6,
+			clickedButton:null,
+			gameStarted:false,
+			nextWord:false,
+			chosenLevel:'medium',
+			score:0,
+			gameOver:false
+		}
+	},
+}); 
+
 
 var animeShows = ["death note", "monster", "rurouni kenshin", "pokemon", "trigun",
 	"naruto", "cowboy bepop", "evangelion", "dragon ball z", "flcl"
