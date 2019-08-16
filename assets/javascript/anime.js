@@ -1,14 +1,14 @@
-function toggleMute() {
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems);
+  });
 
-	var video=document.getElementById("#video");
-  
-	if(video.muted){
-	  video.muted = false;
-	} else {
-	  video.muted = true;
-	}
-  
-  }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+});
+
 $('#playButton').hide();
 $('strong').hide();
 $('#blanks').hide();
@@ -18,8 +18,11 @@ $('#myBtn').hide();
 $('#myBtn2').hide();
 $('.btn').hide();
 $('h1').hide();
-
 $('#animePick').hide();
+$('.carousel').hide();
+$('#carouselRow').hide();
+
+
 $('#playButton').delay(26000).fadeIn('slow');
 
 
@@ -29,9 +32,9 @@ $("#playButton").on("click", function () {
 	$('#animePick').delay(200).fadeIn('slow');
 	$('#playButton').remove();
 	$('#video').animate({
-		opacity: 0.9,
-
+		opacity: 0.8,
 	})
+	
 });
 
 $("#myBtn").on("click", function () {
@@ -46,6 +49,9 @@ $("#myBtn").on("click", function () {
 	$('#myBtn4').delay(200).fadeIn('slow');
 	$('#myBtn5').delay(200).fadeIn('slow');
 	$('#myBtn6').delay(200).fadeIn('slow');
+	$('#carouselRow').delay(200).fadeIn('slow');
+	$('.carousel').delay(200).fadeIn('slow');
+
 
 });
 
@@ -61,107 +67,124 @@ $("#myBtn2").on("click", function () {
 	$('#myBtn4').delay(200).fadeIn('slow');
 	$('#myBtn5').delay(200).fadeIn('slow');
 	$('#myBtn6').delay(200).fadeIn('slow');
+	$('#carouselRow').delay(200).fadeIn('slow');
+	$('.carousel').delay(200).fadeIn('slow');
 
 });
 
-var start = appStart({
-	getInitialState: function() {
-		return {
-			alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" , "@","-"],
-			words: '',
-			randomWord: '',
-			letters: [],
-			clickedLetters:[],
-			matchedLetters: [],
-			lives:6,
-			initialLives:6,
-			clickedButton:null,
-			gameStarted:false,
-			nextWord:false,
-			chosenLevel:'medium',
-			score:0,
-			gameOver:false
-		}
-	},
-}); 
 
 
-var animeShows = ["death note", "monster", "rurouni kenshin", "pokemon", "trigun",
-	"naruto", "cowboy bepop", "evangelion", "dragon ball z", "flcl"
-];
 
-var animeMovies = ["the wind rises", "grave of the fireflies", "my neighbor totoro", "princess mononoke", "ponya", "spirited away",
-	"castle in the sky", "akira", "ghost in the shell", "howl moving castle", "samurai x"
-];
+// var start = appStart({
+// 	getInitialState: function() {
+// 		return {
+// 			alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" , "@","-"],
+// 			words: '',
+// 			randomWord: '',
+// 			letters: [],
+// 			clickedLetters:[],
+// 			matchedLetters: [],
+// 			lives:6,
+// 			initialLives:6,
+// 			clickedButton:null,
+// 			gameStarted:false,
+// 			nextWord:false,
+// 			chosenLevel:'medium',
+// 			score:0,
+// 			gameOver:false
+// 		}
+// 	},
+// }); 
 
-var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
+// appStart()
 
-$("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
-	// Grabbing and storing the data-anime property value from the button
-	var anime = $(this).attr("data-name");
+			var animeShows = ["death note", "monster", "rurouni kenshin", "pokemon", "trigun",
+				"naruto", "cowboy bepop", "evangelion", "dragon ball z", "flcl"
+			];
 
-	// Constructing a queryURL using the anime name
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-		anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=60";
+			var animeMovies = ["the wind rises", "grave of the fireflies", "my neighbor totoro", "princess mononoke", "ponya", "spirited away",
+				"castle in the sky", "akira", "ghost in the shell", "howl moving castle", "samurai x"
+			];
 
-	// Performing an AJAX request with the queryURL
-	$.ajax({
-			url: queryURL,
-			method: "GET"
-		})
-		// After data comes back from the request
-		.then(function (response) {
-				console.log(queryURL);
-				console.log(response);
+			var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
 
+
+			$("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
+				// Grabbing and storing the data-anime property value from the button
+				var anime = $(this).attr("data-name");
+
+				// Constructing a queryURL using the anime name
+				var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+					anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=36";
+
+				// Performing an AJAX request with the queryURL
+				$.ajax({
+						url: queryURL,
+						method: "GET"
+					})
+				// After data comes back from the request
+				.then(function (response) {
+						console.log(queryURL);
+						console.log(response);
 
 				//Start of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
-				for (var i = 0; i < 60; i++) {
-					console.log(response.data[i].images.original.url);
+					var stillGify; 				
+					var activeGify;
+					$('.carousel').delay(200).fadeIn('slow');
 
-					$('.g-scrolling-carousel').prepend(`
-					<div class="card-panel"> 
-						<img class="card-image materialboxed " src = '${response.data[i].images.original_still.url}'
-						'animated-gif'= '${response.data[i].images.original.url}'
-						'static-gif' = '${response.data[i].images.original_still.url}'
-						<div class="card-reveal"> 
-						<span class="card-title activator grey-text text-darken-4" src = '${response.data[i].title}'><i class="material-icons right"></i></span>
-						<div class="card-action"> <a href="${response.data[i].url}" target="_blank">Click Here</a>
-						</div>
-						</div>			
-						</div>
-					`)};			
+					for (var i = 0; i < 36; i++) {
+					console.log(response.data[i].images.original.url);
+					activeGify = response.data[i].images.original.url; 
+					stillGify = response.data[i].images.original.url;
+
+					// $('.card-image').hover(function (e) {
+					// 	$(this).attr("src", $(this).attr(activeGify))
+					// 		}, function (e) {
+					// 	$(this).attr("src", $(this).attr(stillGify))
+					// 	}
+					// 	);
+
+
+					$('.carousel').prepend(`
+					<a class = "carousel-item" href="JavaScript:Void(0)">
+					<img src = "${stillGify}">
+					</a> 
+
+
+					
+					`)
+					
+							
+					
+					M.AutoInit();
+
+				};
+			
+				
+						// Start of MouseEnter and MouseLeave Enter Events//
+			// 	$(document).ready(function(){
+			// 		$(".card-image").find('img').mouseenter(function(){
+			// 		  if($("#imgAnimate").attr('src','form.jpg')){
+			// 			  $("#imgAnimate").attr('src','form.gif');
+			// 		  }
+			// 		  $(this).mouseleave(function(){
+			// 			  if($("#imgAnimate").attr('src','form.gif')){
+			// 			  $("#imgAnimate").attr('src','form.jpg');
+			// 		  }
+			// 		  });
+			// 		});
+			// 	  });
+
+
+			// End of MouseEnter and MouseLeave Enter Events
+
+
+	
+					
 			//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
 
 
-			//Start of MouseEnter and MouseLeave Enter Events
-					animate(function() {
-					$(".card-image").mouseenter(
-					$(this).attr("src", "animated-gif")
-					)}
-					);
-					still(function() {
-					$(".card-image").mouseleave(
-					$(this).attr("src", "static-gif")
-					)	
-					});                
 			
-				// $(document).ready(function(){
-				// 	$(".card-image").find('img').mouseenter(function(){
-				// 	  if($("#imgAnimate").attr('src','form.jpg')){
-				// 		  $("#imgAnimate").attr('src','form.gif');
-				// 	  }
-				// 	  $(this).mouseleave(function(){
-				// 		  if($("#imgAnimate").attr('src','form.gif')){
-				// 		  $("#imgAnimate").attr('src','form.jpg');
-				// 	  }
-				// 	  });
-				// 	});
-				//   });
-			//End of MouseEnter and MouseLeave Enter Events
-			$('.materialboxed').materialbox();
-			$('h1').scroll();
-			$('.parallax').parallax();
 
 		});
 });

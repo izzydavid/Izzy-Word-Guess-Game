@@ -12,57 +12,95 @@
     <title>Guess Anime Shows</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="../Word-Guess-Game/assets/javascript/jquery.gScrollingCarousel.js" rel="stylesheet" />
     <link rel="stylesheet" href="../Word-Guess-Game/assets/css/style.css">
-
+    <link rel="stylesheet" href="../Word-Guess-Game/assets/css/reset.css">
+    <link rel="stylesheet" href="../Word-Guess-Game/assets/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <video playsinline muted autoplay loop id="video">
+        <div class="row">
+
+                <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="../Word-Guess-Game/assets/images/profilebackground.jpg">
+                </div>
+                        <a href="https://izzydavid.github.io/Bootstrap-Portfolio/index.html"><img class="circle" src="../Word-Guess-Game/assets/images/profile.png" style="height: 200px; width: 200px" style="position: inherit"></a>
+                        <a href="#name"><span class="white-text name">David Irizarry</span></a>
+                        <a href="#email"><span class="white-text email">david.irizarry86@yahoo.com</span></a>
+                </div>
+            </li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>Second Link</a></li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li><a class="subheader">Subheader</a></li>
+                        <li><a class="waves-effect" href="#!"><i class ="material-icons">Cloud</i>Third Link With Waves</a></li>
+                    </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+
+
+
+        <div class="container"> 
+        
+        <video playsinline muted autoplay loop id="video">
         <source src="../Word-Guess-Game/assets/videos/windrises_final.m4v">
-    </video>
+        </video>
 
-    <p id="playButton">Play</p>
-    <h2 id="animeTitle">Guess that Anime Show!</h2>
-    <h2 id="animeTitle2">Guess that Anime Movie!</h2>
+            <div class="row" style="text-align: center;"> 
+                <h2 id="animeTitle">Guess that Anime Show!</h2>
+                <h2 id="animeTitle2">Guess that Anime Movie!</h2>
+            </div> 
 
-    <h2 id="animePick">What Kind of Anime do you Watch?</h2>
+            <div class="row" id = "carouselRow">
+                <div class="carousel">             
+                </div>
+            </div>
 
-    <a id = "myBtn" class="waves-effect waves-light btn"><i class="material-icons center">Shows</i></a>
-    <a id = "myBtn2" class="waves-effect waves-light btn"><i class="material-icons center">Movies</i></a>
-    <p id="blanks">_ _ _ _ _ _ _ _ _ </p>
-    <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
-    <strong>Guesses Left:  </strong> <span id="guesses-left"></span>
-    <strong>Wins: </strong> <span id="win-counter"></span>
-    <strong>Losses: </strong> <span id="loss-counter"></span>
+            <div id="scoreboard" class="row">
+                    <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
+                    <strong>Guesses Left:  </strong> <span id="guesses-left"></span>
+                    <strong>Wins: </strong> <span id="win-counter"></span>
+                    <strong>Losses: </strong> <span id="loss-counter"></span>
+            </div>
 
+            <div class="row" style="text-align: center">
+            <p id="blanks" style="text-align: center">_ _ _ _ _ _ _ _ _ </p>
+            </div>    
 
-    <a data-name="cowboy bepop" id = "myBtn3" class="waves-effect waves-light btn"><i class="material-icons center">Cowboy Bepop</i></a>
-    <a data-name="death note" id = "myBtn4" class="waves-effect waves-light btn"><i class="material-icons center">Death Note</i></a>
-    <a data-name="my neighbor totoro" id = "myBtn5" class="waves-effect waves-light btn"><i class="material-icons center">My Neighbor Totoro</i></a>
-    <a data-name="trigun" id = "myBtn6" class="waves-effect waves-light btn"><i class="">Trigun</i></a>
+    
 
+        <div class="row" style="text-align: center; position: relative; bottom:-50px;"> 
+            <p id="playButton">Play</p>
+            <h2 id="animePick">What Kind of Anime do you Watch?</h2>
+            <div class="row" style="text-align: center; position: relative; bottom: -90px;">
+            <a id = "myBtn" class="waves-effect waves-light btn"><i class="material-icons center">Shows</i></a>
+            <a id = "myBtn2" class="waves-effect waves-light btn"><i class="material-icons center">Movies</i></a>
+            </div>
+        </div>
 
-    <div class="g-scrolling-carousel">
-            <h1> Pick a Gif!</h1> 
-  
-      </div>
+        <div class="row" style="text-align: center;">
+                <a data-name="cowboy bepop" id = "myBtn3" class="waves-effect waves-light btn"><i class="material-icons center">Cowboy Bepop</i></a>
+                <a data-name="death note" id = "myBtn4" class="waves-effect waves-light btn"><i class="material-icons center">Death Note</i></a>
+                <a data-name="my neighbor totoro" id = "myBtn5" class="waves-effect waves-light btn"><i class="material-icons center">My Neighbor Totoro</i></a>
+                <a data-name="trigun" id = "myBtn6" class="waves-effect waves-light btn"><i class="">Trigun</i></a>   
+        </div>
 
-
-
-
+</div>
+ 
 </body>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../Word-Guess-Game/assets/javascript/anime.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"> </script>
-<script src="../Word-Guess-Game/assets/javascript/jquery.gScrollingCarousel.js"></script>
-<script src="https://code.jquery.com/jquery.js"></script>
-<!-- Code to the JavaScript File -->
-<script src="../Word-Guess-Game/assets/javascript/anime.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
 </html>
