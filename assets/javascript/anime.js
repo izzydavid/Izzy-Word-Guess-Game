@@ -12,18 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
       var instances = M.Modal.init(elems);
 }),
 
-  $("#playButton").hide();
-  $("strong").hide();
-  $("#blanks").hide();
-  $("#animeTitle").hide();
-  $("#animeTitle2").hide();
-  $("#myBtn").hide();
-  $("#myBtn2").hide();
-  $(".btn").hide();
-  $("h1").hide();
-  $("#animePick").hide();
-  $(".carousel").hide(500);
-  $("#carouselRow").hide(500);
+  $("#playButton, strong, #blanks, #animeTitle, #animeTitle2, #myBtn, #myBtn2, #gifyButtons, h1, #animePick, #completeRow, #modal1").hide();
+  $(".carousel, #carouselRow").hide(100);
   $("#playButton")
     .delay(1000)
     .fadeIn("slow");
@@ -58,23 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
     $("#myBtn").remove();
     $("#myBtn2").remove();
     $("#animePick").remove();
-    $("#myBtn3")
+      $("iframe").show(500).delay(23000).hide(500);   
+      $("#carouselRow")
       .delay(200)
       .fadeIn("slow");
-    $("#myBtn4")
-      .delay(200)
-      .fadeIn("slow");
-    $("#myBtn5")
-      .delay(200)
-      .fadeIn("slow");
-    $("#myBtn6")
-      .delay(200)
-      .fadeIn("slow");
-    $("#carouselRow")
-      .delay(200)
-      .fadeIn("slow");
-    $(".carousel")
-      .delay(200)
+    $(".carousel, #gifyButtons")
+      .delay(25000)
       .fadeIn("slow");
   });
   $("#myBtn2").on("click", function() {
@@ -93,24 +72,15 @@ document.addEventListener("DOMContentLoaded", function() {
     $("#myBtn2").remove();
     $("#myBtn").remove();
     $("#animePick").remove();
-    $("#myBtn3")
+      $("iframe").show(500).delay(23000).hide(500);   
+      $("#carouselRow")
       .delay(200)
       .fadeIn("slow");
-    $("#myBtn4")
-      .delay(200)
+    $(".carousel, #gifyButtons")
+      .delay(25000)
       .fadeIn("slow");
-    $("#myBtn5")
-      .delay(200)
-      .fadeIn("slow");
-    $("#myBtn6")
-      .delay(200)
-      .fadeIn("slow");
-    $("#carouselRow")
-      .delay(200)
-      .fadeIn("slow");
-    $(".carousel")
-      .delay(200)
-      .fadeIn("slow");
+      M.AutoInit();
+
   });
   
   //play sound upon winning or losing a round
@@ -146,21 +116,24 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
   var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
   $("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
-    //   Grabbing and storing the data-anime property value from the button
-    var anime = $(this).attr("data-name"); // Constructing a queryURL using the anime name
+    //Grabbing and storing the data-anime property value from the button
+    var anime = $(this).attr("data-name"); 
+    //Constructing a queryURL using the anime name
   
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?q=" +
       anime +
-      "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=36"; // Performing an AJAX request with the queryURL
-  
+      "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=36"; 
+      //Performing an AJAX request with the queryURL
     $.ajax({
       url: queryURL,
       method: "GET"
-    }) // After data comes back from the request
+    }) 
+    //After data comes back from the request
       .then(function(response) {
         console.log(queryURL);
-        console.log(response); //Start of For Loop for images and pushing the Gify images into the
+        console.log(response); 
+        //Start of For Loop for images and pushing the Gify images into the
         //Materialize framework/cards and establishing the two different states of the
         //Images "Still" and "Animated" when someone enters and leaves the element//
   

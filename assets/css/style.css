@@ -2,16 +2,33 @@
   margin: 0; 
 }
 
+html {
+  box-sizing: border-box; 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(""); 
+  background-size: cover;
+  background-attachment: center;
+  display: flex; 
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  flex: 1; 
+  z-index: -1px;
+  
+}
 #video {
   position: fixed;
   top: 50%;
   left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: center;
   z-index: -1;
-  height: 100vh;
   background-color: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
   background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
   transform: translateX(-50%) translateY(-50%);
-  
 }
 #playButton{ 
   font-family: 'Dancing Script', cursive;
@@ -22,7 +39,7 @@
 
 #playButton:hover{ 
   border-style: dotted;  
-  color: white; 
+  color: black;
 }
 
 #animeTitle, #animeTitle2 { 
@@ -45,15 +62,17 @@
   color: ivory; 
 }
 
-#scoreboard { 
-  flex-direction: row;  
+#scoreboard, #complete { 
   color: ivory;
   font-size: 35px;
-  justify-content: center; 
   text-align: center; 
-} 
+  margin: 20px;
 
-#wrong-guesses, #guesses-left, #win-counter, #losses-counter { 
+} 
+#complete, #completeRow { 
+  margin: 20px; 
+}
+#wrong-guesses, #guesses-left, #win-counter, #loss-counter, #lettersGuessed { 
   margin: 20px; 
 }
 
@@ -62,14 +81,19 @@ img {
   width: 250px;  
 }
 #carouselRow { 
-  height: 100%;
-  width: 100%;
+  min-width: 100%;
   background: transparent;
   padding: 0; 
   margin: 0; 
   display: flex;
   flex-direction: column;   
   align-items: center;
+}
+
+iframe{ 
+  min-width: 100%;
+  height: 600px;
+  opacity: .5;
 }
 
 .carousel-item { 
@@ -82,7 +106,6 @@ img {
   cursor: pointer;
   margin: 20px;
 }
-
 
 #myBtn3, #myBtn4, #myBtn5, #myBtn6 {
   color: ivory;
@@ -98,6 +121,30 @@ img {
 }
 
 
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+    max-width: 100%;
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+  }
 
 @media screen and (min-width: 600px) {
   div.example {
