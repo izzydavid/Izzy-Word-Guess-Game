@@ -1,259 +1,202 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
+//Begining of the user choice of the game//
+document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll(".carousel");
     var instances = M.Carousel.init(elems);
-  });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
+});
+  document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll(".sidenav");
     var instances = M.Sidenav.init(elems);
-});
+}),
+    document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll(".modal");
+      var instances = M.Modal.init(elems);
+}),
 
-$('#playButton').hide();
-$('strong').hide();
-$('#blanks').hide();
-$('#animeTitle').hide();
-$('#animeTitle2').hide();
-$('#myBtn').hide();
-$('#myBtn2').hide();
-$('.btn').hide();
-$('h1').hide();
-$('#animePick').hide();
-$('.carousel').hide();
-$('#carouselRow').hide();
-
-
-$('#playButton').delay(26000).fadeIn('slow');
-
-
-$("#playButton").on("click", function () {
-	$('#myBtn').delay(200).fadeIn('slow');
-	$('#myBtn2').delay(200).fadeIn('slow');
-	$('#animePick').delay(200).fadeIn('slow');
-	$('#playButton').remove();
-	$('#video').animate({
-		opacity: 0.8,
-	})
-	
-});
-
-$("#myBtn").on("click", function () {
-	$('strong').delay(200).fadeIn('slow');
-	$('#blanks').delay(200).fadeIn('slow');
-	$('#animeTitle').delay(200).fadeIn('slow');
-	$('#btn3').delay(200).fadeIn('slow');
-	$('#myBtn').remove();
-	$('#myBtn2').remove();
-	$('#animePick').remove();
-	$('#myBtn3').delay(200).fadeIn('slow');
-	$('#myBtn4').delay(200).fadeIn('slow');
-	$('#myBtn5').delay(200).fadeIn('slow');
-	$('#myBtn6').delay(200).fadeIn('slow');
-	$('#carouselRow').delay(200).fadeIn('slow');
-	$('.carousel').delay(200).fadeIn('slow');
-
-
-});
-
-$("#myBtn2").on("click", function () {
-	$('strong').delay(200).fadeIn('slow');
-	$('#blanks').delay(200).fadeIn('slow');
-	$('#animeTitle2').delay(200).fadeIn('slow');
-	$('#btn3').delay(200).fadeIn('slow');
-	$('#myBtn2').remove();
-	$('#myBtn').remove();
-	$('#animePick').remove();
-	$('#myBtn3').delay(200).fadeIn('slow');
-	$('#myBtn4').delay(200).fadeIn('slow');
-	$('#myBtn5').delay(200).fadeIn('slow');
-	$('#myBtn6').delay(200).fadeIn('slow');
-	$('#carouselRow').delay(200).fadeIn('slow');
-	$('.carousel').delay(200).fadeIn('slow');
-
-});
-
-
-
-
-// var start = appStart({
-// 	getInitialState: function() {
-// 		return {
-// 			alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" , "@","-"],
-// 			words: '',
-// 			randomWord: '',
-// 			letters: [],
-// 			clickedLetters:[],
-// 			matchedLetters: [],
-// 			lives:6,
-// 			initialLives:6,
-// 			clickedButton:null,
-// 			gameStarted:false,
-// 			nextWord:false,
-// 			chosenLevel:'medium',
-// 			score:0,
-// 			gameOver:false
-// 		}
-// 	},
-// }); 
-
-// appStart()
-
-			var animeShows = ["death note", "monster", "rurouni kenshin", "pokemon", "trigun",
-				"naruto", "cowboy bepop", "evangelion", "dragon ball z", "flcl"
-			];
-
-			var animeMovies = ["the wind rises", "grave of the fireflies", "my neighbor totoro", "princess mononoke", "ponya", "spirited away",
-				"castle in the sky", "akira", "ghost in the shell", "howl moving castle", "samurai x"
-			];
-
-			var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
-
-
-			$("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
-				// Grabbing and storing the data-anime property value from the button
-				var anime = $(this).attr("data-name");
-
-				// Constructing a queryURL using the anime name
-				var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-					anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=36";
-
-				// Performing an AJAX request with the queryURL
-				$.ajax({
-						url: queryURL,
-						method: "GET"
-					})
-				// After data comes back from the request
-				.then(function (response) {
-						console.log(queryURL);
-						console.log(response);
-
-				//Start of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
-					var stillGify; 				
-					var activeGify;
-					$('.carousel').delay(200).fadeIn('slow');
-
-					for (var i = 0; i < 36; i++) {
-					console.log(response.data[i].images.original.url);
-					activeGify = response.data[i].images.original.url; 
-					stillGify = response.data[i].images.original.url;
-
-					// $('.card-image').hover(function (e) {
-					// 	$(this).attr("src", $(this).attr(activeGify))
-					// 		}, function (e) {
-					// 	$(this).attr("src", $(this).attr(stillGify))
-					// 	}
-					// 	);
-
-
-					$('.carousel').prepend(`
-					<a class = "carousel-item" href="JavaScript:Void(0)">
-					<img src = "${stillGify}">
-					</a> 
-
-
-					
-					`)
-					
-							
-					
-					M.AutoInit();
-
-				};
-			
-				
-						// Start of MouseEnter and MouseLeave Enter Events//
-			// 	$(document).ready(function(){
-			// 		$(".card-image").find('img').mouseenter(function(){
-			// 		  if($("#imgAnimate").attr('src','form.jpg')){
-			// 			  $("#imgAnimate").attr('src','form.gif');
-			// 		  }
-			// 		  $(this).mouseleave(function(){
-			// 			  if($("#imgAnimate").attr('src','form.gif')){
-			// 			  $("#imgAnimate").attr('src','form.jpg');
-			// 		  }
-			// 		  });
-			// 		});
-			// 	  });
-
-
-			// End of MouseEnter and MouseLeave Enter Events
-
-
-	
-					
-			//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
-
-
-			
-
-		});
-});
-
-
-
-// var animate = function () {
-//     var drawMe = lives ;
-//     drawArray[drawMe]();
-//   }
-
-// canvas =  function(){
-
-//     myStickman = document.getElementById("stickman");
-//     context = myStickman.getContext('2d');
-//     context.beginPath();
-//     context.strokeStyle = "#fff";
-//     context.lineWidth = 2;
-//   };
+  $("#playButton").hide();
+  $("strong").hide();
+  $("#blanks").hide();
+  $("#animeTitle").hide();
+  $("#animeTitle2").hide();
+  $("#myBtn").hide();
+  $("#myBtn2").hide();
+  $(".btn").hide();
+  $("h1").hide();
+  $("#animePick").hide();
+  $(".carousel").hide(500);
+  $("#carouselRow").hide(500);
+  $("#playButton")
+    .delay(1000)
+    .fadeIn("slow");
+  $("#playButton").on("click", function() {
+    $("#myBtn")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn2")
+      .delay(200)
+      .fadeIn("slow");
+    $("#animePick")
+      .delay(200)
+      .fadeIn("slow");
+    $("#playButton").remove();
+    $("#video").animate({
+      opacity: 0.8
+    });
+  });
+  $("#myBtn").on("click", function() {
+    $("strong")
+      .delay(200)
+      .fadeIn("slow");
+    $("#blanks")
+      .delay(200)
+      .fadeIn("slow");
+    $("#animeTitle")
+      .delay(200)
+      .fadeIn("slow");
+    $("#btn3")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn").remove();
+    $("#myBtn2").remove();
+    $("#animePick").remove();
+    $("#myBtn3")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn4")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn5")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn6")
+      .delay(200)
+      .fadeIn("slow");
+    $("#carouselRow")
+      .delay(200)
+      .fadeIn("slow");
+    $(".carousel")
+      .delay(200)
+      .fadeIn("slow");
+  });
+  $("#myBtn2").on("click", function() {
+    $("strong")
+      .delay(200)
+      .fadeIn("slow");
+    $("#blanks")
+      .delay(200)
+      .fadeIn("slow");
+    $("#animeTitle2")
+      .delay(200)
+      .fadeIn("slow");
+    $("#btn3")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn2").remove();
+    $("#myBtn").remove();
+    $("#animePick").remove();
+    $("#myBtn3")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn4")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn5")
+      .delay(200)
+      .fadeIn("slow");
+    $("#myBtn6")
+      .delay(200)
+      .fadeIn("slow");
+    $("#carouselRow")
+      .delay(200)
+      .fadeIn("slow");
+    $(".carousel")
+      .delay(200)
+      .fadeIn("slow");
+  });
   
-//     head = function(){
-//       myStickman = document.getElementById("stickman");
-//       context = myStickman.getContext('2d');
-//       context.beginPath();
-//       context.arc(60, 25, 10, 0, Math.PI*2, true);
-//       context.stroke();
-//     }
-    
-//   draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-    
-//     context.moveTo($pathFromx, $pathFromy);
-//     context.lineTo($pathTox, $pathToy);
-//     context.stroke(); 
-// }
-
-//    frame1 = function() {
-//      draw (0, 150, 150, 150);
-//    };
-   
-//    frame2 = function() {
-//      draw (10, 0, 10, 600);
-//    };
+  //play sound upon winning or losing a round
   
-//    frame3 = function() {
-//      draw (0, 5, 70, 5);
-//    };
+  function playSound(sound) {
+    var audio = new Audio("sounds/" + sound + ".mp3");
+    audio.play();
+  }
+  var animeShows = [
+    "death note",
+    "monster",
+    "rurouni kenshin",
+    "pokemon",
+    "trigun",
+    "naruto",
+    "cowboy bepop",
+    "evangelion",
+    "dragon ball z",
+    "flcl"
+  ];
+  var animeMovies = [
+    "the wind rises",
+    "grave of the fireflies",
+    "my neighbor totoro",
+    "princess mononoke",
+    "ponya",
+    "spirited away",
+    "castle in the sky",
+    "akira",
+    "ghost in the shell",
+    "howl moving castle",
+    "samurai x"
+  ];
+  var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
+  $("#myBtn3, #myBtn4, #myBtn5, #myBtn6").on("click", function intiialButtons() {
+    //   Grabbing and storing the data-anime property value from the button
+    var anime = $(this).attr("data-name"); // Constructing a queryURL using the anime name
   
-//    frame4 = function() {
-//      draw (60, 5, 60, 15);
-//    };
+    var queryURL =
+      "https://api.giphy.com/v1/gifs/search?q=" +
+      anime +
+      "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=36"; // Performing an AJAX request with the queryURL
   
-//    torso = function() {
-//      draw (60, 36, 60, 70);
-//    };
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }) // After data comes back from the request
+      .then(function(response) {
+        console.log(queryURL);
+        console.log(response); //Start of For Loop for images and pushing the Gify images into the
+        //Materialize framework/cards and establishing the two different states of the
+        //Images "Still" and "Animated" when someone enters and leaves the element//
   
-//    rightArm = function() {
-//      draw (60, 46, 100, 50);
-//    };
+        for (var i = 0; i < 36; i++) {
+          console.log(response.data[i].images.original.url);
+          $(".carousel").prepend(`
+                          <div class="carousel-item"> 
+                              <img class="card-image hoverable" src='${
+                            response.data[i].images.fixed_height_still.url
+                          }' data-still='${
+            response.data[i].images.fixed_height_still.url
+          }' data-animate='${
+            response.data[i].images.fixed_height.url
+          }' data-state='still'>
+                              <div class="card-action"> <a href="${
+                            response.data[i].url
+                          }" target="_blank">Click Here</a>
+                              </div>
+                              </div>`);
+          M.AutoInit();
+        }
   
-//    leftArm = function() {
-//      draw (60, 46, 20, 50);
-//    };
+        $(".card-image").hover(function() {
+          //The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+          var state = $(this).attr("data-state"); // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+          //Then, set the image's data-state to animate
+          //Else set src to the data-still value
   
-//    rightLeg = function() {
-//      draw (60, 70, 100, 100);
-//    };
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        }); //End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
+      });
+  });
   
-//    leftLeg = function() {
-//      draw (60, 70, 20, 100);
-//    };
-  
-//   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
