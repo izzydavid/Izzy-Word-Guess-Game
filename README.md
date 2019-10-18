@@ -2,7 +2,7 @@
 
                                                                            [(Izzy's Anime Guess Game.)]
 
-![ALT TXT](https://github.com/izzydavid/Word-Guess-Game/blob/master/assets/images/anime-guess-game?raw=true)
+![ALT TXT](https://github.com/izzydavid/Word-Guess-Game/blob/master/assets/images/anime-guess-game.gif?raw=true)
 
 
 
