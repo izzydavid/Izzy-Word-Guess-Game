@@ -1,15 +1,14 @@
 //jshint esversion:6
-  $(document).ready(function(){
-    $('.carousel').carousel();
-  });
+$(document).ready(function(){
+	$('.carousel').carousel();
+});
 
 //The Start of the Hide of the elements to start sequence towards the user's choice of game//
-$("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyButtons, h1, #animePick, #playAgain, #animeSearch").hide(); 
+$("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyButtons, h1, #animePick, #playAgain, #animeSearch, #inputRow").hide(); 
 	$(".carousel").hide(100);
 	$("#playButton")
 		.delay(1000)
 		.fadeIn("slow");
-
 //The End of the Hide of the elements to start sequence towards the user's choice of game//
 
 //The Start of the play button function that leads the user to pick Anime Shows or Anime Movies//
@@ -28,7 +27,7 @@ $("#playButton").on("click", function () {
 $("#movieBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle").delay(200).fadeIn("slow");
 	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span").delay(500).fadeIn("slow");
+	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();
@@ -40,7 +39,7 @@ $("#movieBtn").on("click", function () {
 $("#showBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle2").delay(200).fadeIn("slow");
 	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span").delay(500).fadeIn("slow");
+	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();
@@ -61,16 +60,16 @@ function gameStart() {
 // //The End of the Play Again Function named Complete Row//
 
 
-	var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
+var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
 
 	function showButtons() {
 		$("#gifyButtons").empty();
 		topics.forEach(function (anime, i) {
 			var a = $("<a>");
-			a.addClass("waves-effect waves-light btn center-align");
+			a.addClass("waves-effect waves-light btn");
 			a.addClass("animeButton").text(topics[i]).attr("data-name", topics[i]);
 			var i = $("<i>");
-			i.addClass("material-icons.md-24 { font-size: 24px} center-align");
+			i.addClass("material-icons.md-24 { font-size: 24px}");
 			$("#gifyButtons").append(a, i);
 		});
 	}

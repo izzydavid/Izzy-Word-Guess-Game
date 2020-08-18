@@ -71,19 +71,22 @@ html {
 	color: ivory;
 }
 
-#animeButton, button { 
+a { 
 border-radius: 20px !important;
-	padding: 0;
-	margin: 0;
-	width: 100px; 
+	padding: 50px;
+	margin: 50px;
+	width: 150px; 
+	flex: auto;
+	flex-flow: row;
 }
 
 #scoreboard,
-#complete, #gifyButtons {
+#complete {
 	color: ivory;
-	font-size: 30px;
+	font-size: 25px;
 	margin: 45px;
-	text-align: center;
+	text-align: center !important;
+	flex: row;
 }
 
 #inputRow { 
@@ -92,19 +95,13 @@ border-radius: 20px !important;
 	bottom: -75%;
 }
 
-.carousel-item {
+.carousel {
 margin: 20px; 
 padding: 20px; 
 position: relative;
-bottom: 10%;
+bottom: 20%;
 }
 
-.carousel-item{
-margin: 20px;
-position: relative;
-top: -10%;
-flex-flow: wrap;
-}
 
 #playAgain {
 	margin: 20px;
@@ -141,19 +138,19 @@ img {
 	color: white;
 
 }
-#gifyButtons > a {
+#gifyButtons, .btn {
 	color: ivory;
 	cursor: pointer;
-	min-width: 100%;
 	width: 200px;
-	margin: 10px;
-	text-align: center;
-	flex-direction: row;
+	margin: 10px; 
+	padding: 10px;
+	display: block;
 	&:hover {
 		background: black;
 		color: white;
 	}
 }
+
 
 .material-icons {
   font-family: 'Material Icons';
@@ -203,7 +200,6 @@ img {
 			height: auto;
 		}
 	}
-
 }
 
 @media (max-aspect-ratio: 16/9) {
