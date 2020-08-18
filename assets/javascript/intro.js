@@ -62,34 +62,35 @@ function gameStart() {
 
 var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
 
-	function showButtons() {
-		$("#gifyButtons").empty();
-		topics.forEach(function (anime, i) {
-			var a = $("<a>");
-			a.addClass("waves-effect waves-light btn");
-			a.addClass("animeButton").text(topics[i]).attr("data-name", topics[i]);
-			var i = $("<i>");
-			i.addClass("material-icons.md-24 { font-size: 24px}");
-			$("#gifyButtons").append(a, i);
-		});
-	}
+function showButtons() {
+	$("#addGify, #gifyButtons").empty();
+	topics.forEach(function (anime, i) {
+	var a = $("<a>");
+	a.addClass("waves-effect waves-light btn");
+	a.addClass("animeButton").text(topics[i]).attr("data-name", topics[i]);
+	var i = $("<i>");
+	i.addClass("material-icons.md-24 { font-size: 24px}");
+	$("#gifyButtons").append(a, i);
+	});
+}
 
 
 function addGifyButtons() {
-	$("#addGify").on("click", function () {
-		var newAnime = $("#gif_input").val().trim();
+	$("#addGify").on("click", function (e) {
+		e.preventDefault();
+		var newAnime = $("#gifyInput").val().trim();
 		if (newAnime === "") {
 			return false;
 		} else {
 			topics.push(newAnime);
-				winGame(); 
 		}
-	});
+		showButtons(); 
+});
 
 	//Start of the Gify Buttons Function that will fade in the Play Again button that is ID'd as complete and/or completeRow//
-$("body").on("click", "#gifyButtons", function winGame() {
+$("body").on("click", "#gifyButtons", ".animeButton",  function winGame() {
 	$("#playAgain").delay(5000).fadeIn("slow");
-		//Grabbing the data name values from the gify buttons and storing the data-name property value from the button and storing as the anime variable.
+		//Grabbing the data name values from the gify buttons and storing the data-anime property value from the button and storing as the anime variable.
 		var anime = $(this).attr("data-name");
 		//Constructing a queryURL using the anime name
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=10&rating=pg-13";
@@ -101,12 +102,10 @@ $("body").on("click", "#gifyButtons", function winGame() {
 		console.log(queryURL);
 		console.log(response);
 		//Start of For Loop for images and pushing the Gify images into the Materialize framework/cards and establishing the two different states of the Images "Still" and "Animated" when someone enters and leaves the element//
-		
-			for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 10; i++) {
 		console.log(response.data[i].images.original.url);
-				$(".carousel").prepend(`
-
-     <div class="carousel-item"> 
+		$(".carousel").prepend(`
+     	<div class="carousel-item"> 
 		<img class="card-image hoverable" src='${response.data[i].images.fixed_height_still.url} 
 		'data-still='${response.data[i].images.fixed_height_still.url}
 		'data-animate='${response.data[i].images.fixed_height.url}
@@ -114,20 +113,20 @@ $("body").on("click", "#gifyButtons", function winGame() {
 		<div class="card-action"> <a href="${response.data[i].url}" target="_blank">Click Here</a> </div>
           </div>`);
 		M.AutoInit();
+	}
+		$(".card-image").hover(function () {
+		//The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+		var state = $(this).attr("data-state");
+		//If the clicked image's state is still, update its src attribute to what its data-animate value is. Then, set the image's data-state to animate. Else set src to the data-still value
+		if (state === "still") {
+		$(this).attr("src", $(this).attr("data-animate"));
+		$(this).attr("data-state", "animate");
+		} else {
+		$(this).attr("src", $(this).attr("data-still"));
+		$(this).attr("data-state", "still");
 		}
-			$(".card-image").hover(function () {
-					//The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-					var state = $(this).attr("data-state");
-					//If the clicked image's state is still, update its src attribute to what its data-animate value is. Then, set the image's data-state to animate. Else set src to the data-still value
-					if (state === "still") {
-						$(this).attr("src", $(this).attr("data-animate"));
-						$(this).attr("data-state", "animate");
-					} else {
-						$(this).attr("src", $(this).attr("data-still"));
-						$(this).attr("data-state", "still");
-					}
-				});
-				//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
+	});
+		//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
 			});
 	});
 	winGame(); 
@@ -135,3 +134,4 @@ $("body").on("click", "#gifyButtons", function winGame() {
 
 }
 addGifyButtons(); 
+showButtons();
