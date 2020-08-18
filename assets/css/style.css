@@ -1,193 +1,245 @@
-*{ 
-  margin: 0; 
+* {
+	margin: 0;
 }
 
 html {
-  box-sizing: border-box; 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(""); 
-  background-size: cover;
-  background-attachment: center;
-  display: flex; 
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
-  flex: 1; 
-  z-index: -1px;
-  
+	box-sizing: border-box;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("");
+	background-size: cover;
+	background-attachment: center;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	margin: 0;
+	flex: 1;
+	z-index: -1px;
+
 }
+
 #video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-attachment: center;
-  z-index: -1;
-  background-color: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
-  background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
-  transform: translateX(-50%) translateY(-50%);
-}
-#playButton{ 
-  font-family: 'Dancing Script', cursive;
-  font-size: 200px; 
-  flex-direction: row; 
-  color: ivory; 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: center;
+	z-index: -1;
+	background-color: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	transform: translateX(-50%) translateY(-50%);
 }
 
-#playButton:hover{ 
-  border-style: dotted;  
-  color: black;
+.carousel {
+	background-color: whitesmoke;
+	border-radius: 20px;
+	border-style: initial;
 }
 
-#animeTitle, #animeTitle2 { 
-  font-family: 'Dancing Script', cursive;
-  font-size: 100px; 
-  flex-direction: column; 
-  display: flex;  
-  color: ivory; 
-  margin: 0; 
+#playButton {
+	font-family: 'Dancing Script', cursive;
+	font-size: 200px;
+	flex-direction: row;
+	color: ivory;
 }
 
-#animePick{ 
-  font-family: 'Dancing Script', cursive;
-  font-size: 75px; 
-  color: ivory; 
+#playButton:hover {
+	border-style: dotted;
+	color: black;
 }
 
-#blanks { 
-  font-size: 100px; 
-  color: ivory; 
+#animeTitle,
+#animeTitle2 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 100px;
+	flex-direction: column;
+	display: flex;
+	color: ivory;
+	margin: 0;
 }
 
-#scoreboard, #complete { 
-  color: ivory;
-  font-size: 35px;
-  text-align: center; 
-  margin: 20px;
-
-} 
-#playAgain { 
-  margin: 20px; 
-}
-#wrong-guesses, #guesses-left, #win-counter, #loss-counter, #letters-guessed { 
-  margin: 20px; 
+#animePick {
+	font-family: 'Dancing Script', cursive;
+	font-size: 75px;
+	color: ivory;
 }
 
-img { 
-  height: 250px; 
-  width: 250px;  
-}
-#carouselRow { 
-  min-width: 100%;
-  background: transparent;
-  padding: 0; 
-  margin: 0; 
-  display: flex;
-  flex-direction: column;   
-  align-items: center;
+#blanks {
+	font-size: 100px;
+	color: ivory;
 }
 
-iframe{ 
-  min-width: 100%;
-  height: 700px;
-  opacity: .7;
+#animeButton, button { 
+border-radius: 20px !important;
+	padding: 0;
+	margin: 0;
+	width: 100px; 
 }
 
-.carousel-item { 
-  text-align: center; 
+#scoreboard,
+#complete, #gifyButtons {
+	color: ivory;
+	font-size: 30px;
+	margin: 45px;
+	text-align: center;
 }
 
-#movieBtn,#showBtn {
-  width: 300px;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
+#inputRow { 
+	text-align: center;
+	position: relative;
+	bottom: -75%;
 }
 
+.carousel-item {
+margin: 20px; 
+padding: 20px; 
+position: relative;
+bottom: 10%;
+}
+
+.carousel-item{
+margin: 20px;
+position: relative;
+top: -10%;
+flex-flow: wrap;
+}
+
+#playAgain {
+	margin: 20px;
+}
+
+#wrong-guesses,
+#guesses-left,
+#win-counter,
+#loss-counter,
+#letters-guessed {
+	margin: 10px;
+}
+
+img {
+	height: 250px;
+	width: 250px;
+}
+
+.carousel-item {
+	text-align: center;
+}
+
+#movieBtn,
+#showBtn {
+	width: 300px;
+	color: #fff;
+	cursor: pointer;
+	margin: 20px;
+}
+
+#movieBtn:hover,
+#showBtn:hover {
+	background: black;
+	color: white;
+
+}
 #gifyButtons > a {
-  color: ivory;
-  cursor: pointer;
-  width: 200px; 
-  margin: 10px; 
-
-  &:hover  { 
-    background:black;
-    color: white;
-  }
-
-
+	color: ivory;
+	cursor: pointer;
+	min-width: 100%;
+	width: 200px;
+	margin: 10px;
+	text-align: center;
+	flex-direction: row;
+	&:hover {
+		background: black;
+		color: white;
+	}
 }
 
-#movieBtn:hover, #showBtn:hover {
-  background:black;
-  color: white;
-  
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-    max-width: 100%;
-  }
-  
-  .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-    max-width: 100%;
-  }
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
 
 @media screen and (min-width: 600px) {
-  div.example {
-  font-size: 80px;
+	div.example {
+		font-size: 80px;
+	}
+
+	@media (min-aspect-ratio: 16/9) {
+		#video {
+			width: 100%;
+			height: auto;
+		}
+	}
+
 }
 
-@media (min-aspect-ratio: 16/9) {
-      #video {
-          width:100%;
-          height: auto;
-      }
-}
-
-}
 @media (max-aspect-ratio: 16/9) {
-  #video { 
-      width:auto;
-      height: 100%;
-}
+	#video {
+		width: auto;
+		height: 100%;
+	}
 
 }
 
 @media screen and (max-width: 600px) {
-  div.example {
-  font-size: 30px;
-}
+	div.example {
+		font-size: 30px;
+	}
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...} 
+	/* Extra small devices (phones, 600px and down) */
+	@media only screen and (max-width: 600px) {
+		...
+	}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...} 
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+		...
+	}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...} 
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media only screen and (min-width: 768px) {
+		...
+	}
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...} 
+	/* Large devices (laptops/desktops, 992px and up) */
+	@media only screen and (min-width: 992px) {
+		...
+	}
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
+	/* Extra large devices (large laptops and desktops, 1200px and up) */
+	@media only screen and (min-width: 1200px) {
+		...
+	}
