@@ -71,22 +71,10 @@ html {
 	color: ivory;
 }
 
-a { 
-border-radius: 20px !important;
-	padding: 50px;
-	margin: 50px;
-	width: 150px; 
-	flex: auto;
-	flex-flow: row;
-}
-
 #scoreboard,
 #complete {
 	color: ivory;
-	font-size: 25px;
-	margin: 45px;
-	text-align: center !important;
-	flex: row;
+	font-size: 15px;
 }
 
 #inputRow { 
@@ -138,26 +126,28 @@ img {
 	color: white;
 
 }
-#gifyButtons, .btn {
+#gifyButtons{
 	color: ivory;
 	cursor: pointer;
-	width: 200px;
-	margin: 10px; 
-	padding: 10px;
-	display: block;
-	&:hover {
+	min-width: 100%;
+	min-height: 100%;
+	width: 200px; 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+
+	a:hover {
 		background: black;
 		color: white;
 	}
 }
 
-
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
+  font-size: 20px;  /* Preferred icon size */
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;

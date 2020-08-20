@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 //The Start of the Hide of the elements to start sequence towards the user's choice of game//
-$("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyButtons, h1, #animePick, #playAgain, #animeSearch, #inputRow").hide(); 
+$("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyButtons, h1, #animePick, #playAgain, #animeSearch, #inputRow, #buttons2").hide(); 
 	$(".carousel").hide(100);
 	$("#playButton")
 		.delay(1000)
@@ -27,7 +27,7 @@ $("#playButton").on("click", function () {
 $("#movieBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle").delay(200).fadeIn("slow");
 	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
+	$(".carousel, span, #inputRow, #buttons2").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();
@@ -39,7 +39,7 @@ $("#movieBtn").on("click", function () {
 $("#showBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle2").delay(200).fadeIn("slow");
 	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
+	$(".carousel, span, #inputRow, #buttons2").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();
@@ -60,29 +60,32 @@ function gameStart() {
 // //The End of the Play Again Function named Complete Row//
 
 
-var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
+var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note", "Akira"];
 
 function showButtons() {
-	$("#buttons2", "#addGify", "#gifyButtons", "#button").empty();
+	$("#gifyButtons").empty(); 
 	topics.forEach(function (anime, index) {
-	var button2 = $("#buttons2");
-	button2.addClass('waves-effect waves-light btn').text(topics[index]).attr("data-anime", topics[index]);
-	$("#gifyButtons").append(button2);
-	console.log(index);
-	console.log(anime);
+		var buttons = $("<a>");
+		buttons.addClass('waves-effect waves-light btn');
+		buttons.addClass('material-icons { font-size: 24px} right');
+		buttons.addClass('animeButton').text(topics[index]).attr("data-anime", topics[index]);
+		$("#gifyButtons").append(buttons);
+		console.log(index);
+		console.log(anime);
 	});
 }
 
 function addGifyButtons() {
-	$("#addGify").on("click", function (e) {
+	$("#addGify").on("click", function (e, anime, index) {
 		e.preventDefault();
+		$("#gifyButtons").empty();
 		var newAnime = $("#gifyInput").val().trim();
 		if (newAnime === "") {
 			return false;
 		} else {
 			topics.push(newAnime);
-		}
-		showButtons(); 
+			showButtons();
+		}  
 });
 
 fetch('https://api.giphy.com/v1/gifs/search?q=')
@@ -90,11 +93,11 @@ fetch('https://api.giphy.com/v1/gifs/search?q=')
     return response.json();
   }); 
 	//Start of the Gify Buttons Function that will fade in the Play Again button that is ID'd as complete and/or completeRow//
-	$("#buttons2").on("click", function() {
+	$("#gifyButtons").on("click", ".animeButton",function winGame() {
 		//Grabbing the data name values from the gify buttons and storing the data-anime property value from the button and storing as the anime variable.
 		var anime = $(this).attr("data-anime");
 		//Constructing a queryURL using the anime name
-		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=10&rating=pg-13";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=5&rating=pg-13";
 		$.ajax({
 			url: queryURL,
 			method: "GET"
@@ -132,4 +135,4 @@ fetch('https://api.giphy.com/v1/gifs/search?q=')
 	});
 }
 addGifyButtons(); 
-showButtons();
+winGame();
