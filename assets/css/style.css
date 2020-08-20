@@ -83,16 +83,15 @@ html {
 	bottom: -75%;
 }
 
-.carousel {
-margin: 20px; 
-padding: 20px; 
-position: relative;
-bottom: 20%;
-}
-
-
 #playAgain {
 	margin: 20px;
+}
+
+#hangman {
+border-radius: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+min-width: 100%;
+max-height: 100%;
 }
 
 #wrong-guesses,
@@ -104,12 +103,8 @@ bottom: 20%;
 }
 
 img {
-	height: 250px;
-	width: 250px;
-}
-
-.carousel-item {
-	text-align: center;
+    min-width: 100%;
+    height: 200px;
 }
 
 #movieBtn,
@@ -136,7 +131,9 @@ img {
 	flex-direction: row;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-
+	flex: 1;
+	align-items: flex-end;
+	flex-grow: 1;
 	a:hover {
 		background: black;
 		color: white;
