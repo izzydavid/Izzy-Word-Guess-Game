@@ -4,8 +4,10 @@ $(document).ready(function(){
 });
 
 //The Start of the Hide of the elements to start sequence towards the user's choice of game//
-$("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyButtons, h1, #animePick, #playAgain, #animeSearch, #inputRow, #buttons2").hide(); 
-	$(".carousel").hide(100);
+$("strong, span, #blanks, #animeTitle, #animeTitle2").hide(); 
+$("#gifyButtons, h1, #animePick").hide(); 
+$("#playAgain, #animeSearch, #inputRow").hide(); 
+$(".carousel").hide(); 
 	$("#playButton")
 		.delay(1000)
 		.fadeIn("slow");
@@ -13,8 +15,6 @@ $("strong, span, #blanks, #animeTitle, #animeTitle2, #movieBtn, #showBtn, #gifyB
 
 //The Start of the play button function that leads the user to pick Anime Shows or Anime Movies//
 $("#playButton").on("click", function () {
-	$("#movieBtn").delay(200).fadeIn("slow");
-	$("#showBtn").delay(200).fadeIn("slow");
 	$("#animePick").delay(200).fadeIn("slow");
 	$("#playButton").remove();
 	$("#video").animate({
@@ -26,8 +26,8 @@ $("#playButton").on("click", function () {
 //The Start of the Movie button function//
 $("#movieBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle").delay(200).fadeIn("slow");
-	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span, #inputRow, #buttons2").delay(500).fadeIn("slow");
+	$("#showBtn, #movieBtn, #animePick").remove();
+	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();
@@ -38,8 +38,8 @@ $("#movieBtn").on("click", function () {
 //The Start of the Show button function//
 $("#showBtn").on("click", function () {
 	$("strong, #blanks, #animeTitle2").delay(200).fadeIn("slow");
-	$("#showBtn, #animePick, #movieBtn").remove();
-	$(".carousel, span, #inputRow, #buttons2").delay(500).fadeIn("slow");
+	$("#showBtn, #movieBtn, #animePick").remove();
+	$(".carousel, span, #inputRow").delay(500).fadeIn("slow");
 	// Initialize the game when the page loads.
 	gameStart(); 
 	showButtons();

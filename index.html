@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 	<!-- Start of the personalized Video Background from final cut pro of WindRises and Personalized Background Image --> 
 	<video playsinline muted autoplay loop id="video">
 		<source src="../Izzy-Word-Guess-Game/assets/videos/windrises_final.m4v">
@@ -22,60 +21,60 @@
 	<!-- End of the personalized Video Background from final cut pro of WindRises and Personalized Background Image -->
 
 	<!-- Start of the main Container DIV -->
-	<div class="container">
-		<div class="row" style="text-align: center; position: relative; bottom:-175px;">
-			<p id="playButton">Play</p>
+	<div class="container center-align">
+
+	<!-- Start of the User Play Button  -->
+		<div class="row" id="playButton">
+			<p>Play</p>
 		</div>
 	<!-- End of the User Play Button  -->
 
-		<!-- Start of first options of when the user launches the game order: Play-What Type of Anime(Shows or Movies)  -->
-	<div class="row" style="text-align: center; position: relative; bottom:-50px;">
-		<h2 id="animePick">What Kind of Anime do you Watch?</h2>
-		<div class="row" style="text-align: center; position: relative; bottom: -90px;">
+	<!-- Start of first options of when the user launches the game order: Play-What Type of Anime(Shows or Movies)  -->
+	<div class="row center-align" id="animePick">
+		<h4 style="font-size: 75px;">What Kind of Anime do you Watch?</h4>
 		<a id="movieBtn" class="waves-effect waves-light btn"><i
-		class="material-icons center">Movies</i></a>
-		<a id="showBtn" class="waves-effect waves-light btn"><i class="material-icons center">Shows</i></a>
-		</div>
+		class="material-icons">Movies</i></a>
+		<a id="showBtn" class="waves-effect waves-light btn"><i class="material-icons">Shows</i></a>
 	</div>
-		<!-- End of first options of when the user launches the game order: Play-What Type of Anime(Shows or Movies)  -->
+	<!-- End of first options of when the user launches the game order: Play-What Type of Anime(Shows or Movies)  -->
 
-		<!-- Start of the Title of the Game depending if the user picks Anime Show or Anime Movie  -->
-		<div class="row" style="text-align: center;">
-			<h2 id="animeTitle">Guess that Anime Movie!</h2>
-			<h2 id="animeTitle2">Guess that Anime Show!</h2>
-		</div>
-		<!-- End of the Title of the Game depending if the user picks Anime Show or Anime Movie  -->
 
-		<!-- Start of the Play Again Button for when a User is done with their Gify Pick and want to restart the game -->
+	<!-- Start of the Play Again Button for when a User is done with their Gify Pick and want to restart the game -->
+
 		<!-- <div id="playAgain" class="row" style="text-align: center;">
 			</strong class="waves-effect waves-light btn">Play Again </strong> <span
 				class="material-icons center"></span>
 		</div> -->
-		<!-- End of the Play Again Button for when a User is done with their Gify Pick and want to restart the game -->
+	
+	<!-- End of the Play Again Button for when a User is done with their Gify Pick and want to restart the game -->
+	
+	<div class="row center-align" id="animeTitles">
+		<h2 id="animeTitle">Guess that Anime Movie!</h2>
+		<h2 id="animeTitle2">Guess that Anime Show!</h2>
+	</div>
 
 	<div class="carousel center-align card col-12 row" id="hangman" 
 		style="text-align: center;">
 	</div>
 
 	<!-- Start of Materialized Buttons for Gify when user Wins Game -->
-	<div class = "container row col-12" id="inputRow"> 
-		<input type="text" id="gifyInput" style="text-align: center; width: 500px; color: ivory;"> </input> 
+	<div class="container row col-12 center-align" id="inputRow"> 
+		<input type="text" id="gifyInput"> </input> 
 		<br> 
-		<button id='addGify' class="waves-effect waves-light btn" type="submit" value='submit' style="text-align: center; color: ivory;">Add Gify</button>	
+		<button id='addGify' class="waves-effect waves-light btn" type="submit" value='submit'>Add Gify</button>	
 	</div>
 	<!-- End of Materialized Buttons for Gify when user Wins Game -->
 
-<div class="container col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4 center-align valign-wrapper">
-
 	<!-- Start of the User Scoreboard for the Game  -->
-		<div id="scoreboard" class="row center-align valign-wrapper">
-			<strong>Wrong Guesses: </strong> <span id="wrong-guesses">_____</span>
-			<strong>Guesses Left: </strong> <span id="guesses-left">_____</span>
-			<strong>Wins: </strong> <span id="win-counter">_____</span>
-			<strong>Losses: </strong> <span id="loss-counter">_____</span>
-			<strong>Letters Guessed: </strong> <span id="letters-guessed">_____</span>		
+	<div class="container col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4 center-align valign-wrapper">
+		<div id="scoreboard">
+			<strong>Wrong Guesses: </strong> <span id="wrong-guesses">___</span>
+			<strong>Guesses Left: </strong> <span id="guesses-left">___</span>
+			<strong>Wins: </strong> <span id="win-counter">___</span>
+			<strong>Losses: </strong> <span id="loss-counter">___</span>
+			<strong>Letters Guessed: </strong> <span id="letters-guessed">___</span>		
 		</div>
-		</div>
+	</div>
 	<!-- End of the User Scoreboard for the Galsme  -->
 
 	<!-- Start of the GifyButtons  -->
