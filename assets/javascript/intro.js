@@ -63,17 +63,15 @@ function gameStart() {
 var topics = ["cowboy bepop", "trigun", "my neighbor totoro", "death note"];
 
 function showButtons() {
-	$("#addGify, #gifyButtons").empty();
-	topics.forEach(function (anime, i) {
-	var a = $("<a>");
-	a.addClass("waves-effect waves-light btn");
-	a.addClass("animeButton").text(topics[i]).attr("data-name", topics[i]);
-	var i = $("<i>");
-	i.addClass("material-icons.md-24 { font-size: 24px}");
-	$("#gifyButtons").append(a, i);
+	$("#buttons2", "#addGify", "#gifyButtons", "#button").empty();
+	topics.forEach(function (anime, index) {
+	var button2 = $("#buttons2");
+	button2.addClass('waves-effect waves-light btn').text(topics[index]).attr("data-anime", topics[index]);
+	$("#gifyButtons").append(button2);
+	console.log(index);
+	console.log(anime);
 	});
 }
-
 
 function addGifyButtons() {
 	$("#addGify").on("click", function (e) {
@@ -87,14 +85,16 @@ function addGifyButtons() {
 		showButtons(); 
 });
 
+fetch('https://api.giphy.com/v1/gifs/search?q=')
+  .then(function(response) {
+    return response.json();
+  }); 
 	//Start of the Gify Buttons Function that will fade in the Play Again button that is ID'd as complete and/or completeRow//
-$("body").on("click", "#gifyButtons", ".animeButton",  function winGame() {
-	$("#playAgain").delay(5000).fadeIn("slow");
+	$("#buttons2").on("click", function() {
 		//Grabbing the data name values from the gify buttons and storing the data-anime property value from the button and storing as the anime variable.
-		var anime = $(this).attr("data-name");
+		var anime = $(this).attr("data-anime");
 		//Constructing a queryURL using the anime name
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + anime + "&api_key=Qxpp4x5d7fMc17qfyggEeDXHcJFmzIWO&limit=10&rating=pg-13";
-		//Performing an AJAX request with the queryURL
 		$.ajax({
 			url: queryURL,
 			method: "GET"
@@ -102,16 +102,17 @@ $("body").on("click", "#gifyButtons", ".animeButton",  function winGame() {
 		console.log(queryURL);
 		console.log(response);
 		//Start of For Loop for images and pushing the Gify images into the Materialize framework/cards and establishing the two different states of the Images "Still" and "Animated" when someone enters and leaves the element//
-	for (var i = 0; i < 10; i++) {
-		console.log(response.data[i].images.original.url);
+		for (var i = 0; i < 5; i++) {
+		console.log(response);
+		console.log(response.data[i].images.original.url);	
 		$(".carousel").prepend(`
      	<div class="carousel-item"> 
-		<img class="card-image hoverable" src='${response.data[i].images.fixed_height_still.url} 
-		'data-still='${response.data[i].images.fixed_height_still.url}
-		'data-animate='${response.data[i].images.fixed_height.url}
-		'data-state='still'>
-		<div class="card-action"> <a href="${response.data[i].url}" target="_blank">Click Here</a> </div>
-          </div>`);
+		<img class="card-image hoverable" src='${response.data[i].images.fixed_height_still.url}', 
+		data-still='${response.data[i].images.fixed_height_still.url}'
+		data-animate='${response.data[i].images.fixed_height.url}'
+		data-state='still'>
+		<div class="card-action"> <a href='${response.data[i].url}'target="_blank">Click Here</a> </div>
+        </div>`);
 		M.AutoInit();
 	}
 		$(".card-image").hover(function () {
@@ -127,11 +128,8 @@ $("body").on("click", "#gifyButtons", ".animeButton",  function winGame() {
 		}
 	});
 		//End of For Loop for images and pushing the Gify images into the materialize framework/cards and establishing the two different states of the images "Still" and "Animated" when someone enters and leaves the element//
-			});
+		});
 	});
-	winGame(); 
-	M.AutoInit();
-
 }
 addGifyButtons(); 
 showButtons();
