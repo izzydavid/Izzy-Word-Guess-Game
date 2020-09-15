@@ -83,11 +83,118 @@ border-radius: 20px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 min-width: 100%;
 max-height: 100%;
+position: relative;
+display: flex;
+
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+flex-direction: row;
 }
 
 img {
 	min-width: 100%;
-	height: 200px;
+	height: 150px
+}
+
+.card-image{
+border-radius: 30px !important;
+background-color: whitesmoke !important;
+color: white;
+min-height: 100%;
+}
+
+#introVideo {
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: center;
+z-index: -1;
+background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
+rgba(0, 0, 0, 0.50));
+background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
+(0, 0, 0, 0.50));
+transform: translateX(-50%) translateY(-50%);
 }
 
 #gifyInput{ 
@@ -127,10 +234,13 @@ border-radius: 20px !important;
 	color: ivory;
 	cursor: pointer;
 	position: relative;
-	bottom: -50px;
+	bottom: -30px;
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
+	flex-direction: column;
+	margin: 30px;
+	padding: 10px;
 	a:hover {
 		background: black;
 		color: white;

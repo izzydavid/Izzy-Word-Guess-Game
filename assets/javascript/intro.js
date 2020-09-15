@@ -3,8 +3,14 @@ $(document).ready(function(){
 	$('.carousel').carousel();
 });
 
+setTimeout(function () {
+	$("#introVideo")[0].play(); 
+	$("#introVideo").fadeIn('slow');
+// note the [0] to access the native element
+}, 10000); // 10 seconds = 10000 ms
+
 //The Start of the Hide of the elements to start sequence towards the user's choice of game//
-$("strong, span, #blanks, #animeTitle, #animeTitle2").hide(); 
+$("strong, span, #blanks, #animeTitle, #animeTitle2, #introVideo").hide(); 
 $("#gifyButtons, h1, #animePick").hide(); 
 $("#playAgain, #animeSearch, #inputRow").hide(); 
 $(".carousel").hide(); 
@@ -51,6 +57,7 @@ $("#showBtn").on("click", function () {
 function gameStart() {
 	$('#hangman, #gifyButtons, #animeSearch').delay(500).fadeIn("slow");
 }
+
 
 // //The Start of the Play Again Function named Complete Row//
 // $("#playAgain").on("click", function () {
