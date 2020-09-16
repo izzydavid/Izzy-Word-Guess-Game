@@ -54,7 +54,13 @@ bottom: -40px;
 	color: ivory;
 	min-width: 100%;
 	position: relative;
-	bottom: -250px;
+	top: -500px !important;
+	justify-content: center;
+}
+
+#animePick > h4 {
+	font-size: 50px !important;
+
 }
 
 #animeTitle, #animeTitle2 {
@@ -166,12 +172,7 @@ border-radius: 20px !important;
 	flex-direction: column;
 	margin: 30px;
 	padding: 10px;
-	a:hover {
-		background: black;
-		color: white;
-	}
 }
-
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -198,15 +199,15 @@ border-radius: 20px !important;
 }
 
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+font-family: 'Material Icons';
+font-style: normal;
+font-weight: 400;
+src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+src: local('Material Icons'),
+local('MaterialIcons-Regular'),
+url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 @media screen and (min-width: 600px) {
@@ -227,9 +228,12 @@ border-radius: 20px !important;
 		height: 100%;
 	}
 	#animePick { 
-	bottom: 10px;
+	top: 225px !important;
 	position: relative;
-}
+	}
+	#animePick > h4 {
+	font-size: 75px !important;
+} 
 	#gifyButtons {
 	min-width: 100%;
 	font-size: 20px !important;
@@ -238,8 +242,8 @@ border-radius: 20px !important;
 	flex: row;
 	flex-wrap: wrap;
 	flex-direction: row;
-}
 
+}
 }
 
 @media screen and (max-width: 600px) {
@@ -249,25 +253,66 @@ border-radius: 20px !important;
 
 	/* Extra small devices (phones, 600px and down) */
 	@media only screen and (max-width: 600px) {
-		...
+	#animePick { 
+	top: 100px !important;
+	position: relative;
+	}
+	#animePick > h4 {
+	font-size: 50px !important;
+	}
+	.carousel {
+	width: 300px !important;
+	height: 300px !important;
+	}	
+
+	#gifyButtons {
+	flex: row !important;
+	justify-content: space-evenly !important;
+	display: flex !important;
+	flex-direction: column;
+	margin: 30px !important;
+	align-items: center;
+	position: relative;
+	right: 30px !important;
+	}
+
+	.animeButton {
+	margin: 10px;
+}
+
+	#scoreboard {
+	font-size: 20px !important;
+	flex-direction: column;
+	justify-content: space-evenly;
+	position: relative;
+	right: -75px !important;
+	}
+}
+		
 	}
 
 	/* Small devices (portrait tablets and large phones, 600px and up) */
 	@media only screen and (min-width: 600px) {
-		...
+		#animePick { 
+		top: -950px !important;
+		position: relative;
+		}
+		#animePick > h4 {
+		font-size: 75px !important;
+		
+	}
 	}
 
 	/* Medium devices (landscape tablets, 768px and up) */
 	@media only screen and (min-width: 768px) {
-		...
+		
 	}
 
 	/* Large devices (laptops/desktops, 992px and up) */
 	@media only screen and (min-width: 992px) {
-		...
+
 	}
 
 	/* Extra large devices (large laptops and desktops, 1200px and up) */
 	@media only screen and (min-width: 1200px) {
-		...
 	}
