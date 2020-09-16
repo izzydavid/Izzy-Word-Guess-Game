@@ -118,14 +118,14 @@ img {
 	height: 200px; 
 	width: 175px !important; 
 	position: relative;
-	top: 10px !important;
+	top: 5px !important;
 	border-radius: 20px !important;
 }
 
 
 .carousel > .carousel-item {
 	position: relative;
-	top: 25px !important;
+	top: -80px !important;
 	background-color: ivory;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	height: 250px !important;
@@ -136,54 +136,58 @@ img {
 #gifyInput{ 
 	text-align: center;
 	position: relative;
-	bottom: 5px;
+	bottom: 180px;
+	margin: 20px;
 	color: ivory;
 	font: bolder;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 50px;
 }
 
-#scoreboard,
-#complete {
+#addGify {
+	margin: 10px;
+	position: relative;
+	top: -195px;
+	font-size: 12px;
+}
+
+#scoreboard {
 	color: ivory;
 	font-size: 18px;
 	display: flex;
 	justify-content: space-evenly;
-	flex-wrap: wrap;
-	position: relative;
-	bottom: 0px;
-}
-
-#wrong-guesses,
-#guesses-left,
-#win-counter,
-#loss-counter,
-#letters-guessed {
+	flex-direction: row;
 	margin: 10px;
+	top: -220px;
+	position: relative;
 }
 
-#addGify {
-border-radius: 20px !important;
+#wrong-guesses, #guesses-left, #letters-guessed, #win-counter, #loss-counter {
+margin: 20px;
 }
 
-#gifyButtons{
+#gifyButtons > a {
 	color: ivory;
 	cursor: pointer;
 	position: relative;
-	bottom: -30px;
-	display: flex;
-	justify-content: space-evenly;
+	top: -200px; 
+	right: -300px;
+	margin: 5px;
+	display: flex !important; 
+	flex-flow: row !important; 
+	flex-direction: row !important;
 	flex-wrap: wrap;
-	flex-direction: column;
-	margin: 30px;
-	padding: 10px;
+}	
+
+#gifyButtons {
+max-width: 500px !important;
 }
+	
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  border-radius: 20px !important;
-  font-size: 20px;  /* Preferred icon size */
+  font-size: 12px;  /* Preferred icon size */
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;
@@ -228,35 +232,20 @@ url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 @media (max-aspect-ratio: 16/9) {
-	#video {
-		width: auto;
-		height: 100%;
-	}
 	#animePick { 
 	top: 225px !important;
 	position: relative;
 	}
 	#animePick > h4 {
 	font-size: 75px !important;
-} 
+	} 
 	#gifyButtons {
-	min-width: 100%;
-	font-size: 20px !important;
-	display: flex;
-	justify-content: space-evenly;
-	flex: row;
-	flex-wrap: wrap;
-	flex-direction: row;
-
+	flex-flow: wrap;
 }
 }
 
+/* Extra small devices (phones, 600px and down) */
 @media screen and (max-width: 600px) {
-	div.example {
-		font-size: 30px;
-	}
-
-	/* Extra small devices (phones, 600px and down) */
 	@media only screen and (max-width: 600px) {
 	#animePick { 
 	top: 100px !important;
@@ -266,35 +255,61 @@ url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 	font-size: 50px !important;
 	}
 	.carousel {
-	width: 300px !important;
-	height: 300px !important;
+	min-width: 300px !important;
+	max-height: 500px !important;
+	position: relative;
+	top: -50px !important;
 	}	
 
-	#gifyButtons {
-	flex: row !important;
-	justify-content: space-evenly !important;
-	display: flex !important;
-	flex-direction: column;
-	margin: 30px !important;
-	align-items: center;
+	.carousel > .carousel-item {
+	width: 175px !important;
+	height: 200px !important;
+	}
+	.card-action > a {
 	position: relative;
-	right: 30px !important;
+	top: 4px !important;
 	}
 
-	.animeButton {
-	margin: 10px;
-}
+	img {
+	width: 150px !important; 
+	height: 150px !important;
+	}
 
-	#scoreboard {
-	font-size: 20px !important;
-	flex-direction: column;
-	justify-content: space-evenly;
+	#gifyButtons > .animeButton, a, .material-icons{
+	margin: 5px;
+	flex-flow: row !important;
+	flex-direction: row !important;
+	justify-content: space-evenly !important;
 	position: relative;
-	right: -75px !important;
+	right: 0px;
+	top: -110px;
+	font-size: 12px;
+	flex-wrap: wrap !important;
+	}
+
+	#wrong-guesses, #guesses-left, #letters-guessed, #win-counter, 
+	#loss-counter {
+	margin: 5px;
+	}
+	
+	#scoreboard {
+	font-size: 12px !important;
+	display: flex;
+	flex-direction: row !important;
+	position: relative;
+	max-width: 100px;
+	right: -100px !important;
+	top: -320px !important;
+	margin: 5px;
+	}
+
+	#gifyInput {
+	position: relative;
+	top: -260px;
 	}
 }
 		
-	}
+}
 
 	/* Small devices (portrait tablets and large phones, 600px and up) */
 	@media only screen and (min-width: 600px) {

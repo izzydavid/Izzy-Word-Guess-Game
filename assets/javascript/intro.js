@@ -74,7 +74,7 @@ function showButtons() {
 	topics.forEach(function (anime, index) {
 		var buttons = $("<a>");
 		buttons.addClass('waves-effect waves-light btn');
-		buttons.addClass('material-icons { font-size: 24px} right');
+		buttons.addClass('material-icons { font-size: 12px}');
 		buttons.addClass('animeButton').text(topics[index]).attr("data-anime", topics[index]);
 		$("#gifyButtons").append(buttons);
 		console.log(index);
