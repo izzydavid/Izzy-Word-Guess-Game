@@ -12,15 +12,15 @@ setTimeout(function () {
 	$("#introVideo")[0].play(); 
 	$("#introVideo").fadeIn('slow');
 // note the [0] to access the native element
-}, 30000); // 10 seconds = 10000 ms
+}, 40000); // 10 seconds = 10000 ms
 
 //The Start of the Hide of the elements to start sequence towards the user's choice of game//
-$("strong, span, #blanks, #animeTitle, #animeTitle2, #introVideo").hide(); 
+$("strong, span, #blanks, #animeTitle, #animeTitle2, #introVideo, #playButton").hide(); 
 $("#gifyButtons, h1, #animePick").hide(); 
 $("#playAgain, #animeSearch, #inputRow").hide(); 
 $(".carousel").hide(); 
 	$("#playButton")
-		.delay(1000)
+		.delay(26000)
 		.fadeIn("slow");
 //The End of the Hide of the elements to start sequence towards the user's choice of game//
 
