@@ -128,7 +128,7 @@ $("#gifyButtons").on("click", ".animeButton", function winGame() {
 				data-still='${response.data[i].images.fixed_height_still.url}'
 				data-animate='${response.data[i].images.fixed_height.url}'
 				data-state='still'>
-				<div class="card-action"> <a href='${response.data[i].url}'target="_blank">Click Here</a> 
+				<div class="card-action"> <a href='${response.data[i].url}'target="_blank">Download Gify</a> 
 				</div>
 				</div>`);
 			M.AutoInit();
