@@ -1,5 +1,5 @@
 * {
-	margin: 0px;
+	margin: 0;
 }
 
 html {
@@ -13,25 +13,36 @@ html {
 	margin: 0;
 	flex: 1;
 	z-index: -1px;
+
 }
 
-#introVideo, #video > iframe {
+#video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: center;
+	z-index: -1;
+	background-color: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	transform: translateX(-50%) translateY(-50%);
+}
+
+#introVideo {
 position: fixed;
-display: block;
-border: 0;
-border-width: 0s
-margin: 0;
 top: 50%;
 left: 50%;
-max-width: 100%;
+min-width: 100%;
 min-height: 100%;
+background-size: cover;
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: center;
 z-index: -1;
-overflow:hidden;
-overflow-x:hidden;
-overflow-y:hidden;
 background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
 rgba(0, 0, 0, 0.50));
 background: linear-gradient(rgba(0, 0, 0, 0.50), rgba

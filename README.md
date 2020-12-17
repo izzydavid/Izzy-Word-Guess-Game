@@ -4,9 +4,32 @@
 
 ![ALT TXT](https://github.com/izzydavid/Word-Guess-Game/blob/master/assets/images/anime-guess-game.gif?raw=true)
 
+### To Do List 
 
+### Add Following Functions
 
+- [ ] Keyboard input and adding keyboard input to the console.log() and prepend keyboard to the scoreboard div.
+- [ ] Add Anime Shows Object and create a function where the user input matches or does not match the value of the listed anime shows.
+- [ ] Provide a helpful hint to users on the premise of the show/movie.
+- [ ] Add to scoreboard based on following: guessed letters, correct guesses, win/losses, remaining guesses left.
 
+### Add to Scoreboard
+
+- [ ] Canvas for hangman when user adds an incorrect input and correct input to the guessing game.
+- [ ] SVG Capabilities for buttons similiar to React Hangminzr Game (Coding-BootCamp/03-javascript/02-Homework/hangmanizr)
+
+### Video Playback Feature
+
+- [ ] Add function for when a user wins to replace background with the Anime’s Intro/Outro Video from https://themes.moe/
+- [ ] Find a way to have the background video stream from the same place as https://themes.moe/ due to size of video file and maintain the video quality.
+- [ ] Recreate the intro_video with the HD verison of “The WInd Rises” and add following anime snippets: Arrange Anime Shows and Anime Movies: Dragon Ball Z, Cowboy Bepop, My Neighbor Totoro, Death Note, Akira, Trigun.
+
+### Fix the Style.CSS File
+
+- [ ] Material icon button in selection of anime movies or shows.
+- [ ] Game is not mobile responsive on MacBook. Fix the game to become mobile responsive for all devices.
+- [ ] Learn FLEXBOX and use FLEXBOX.
+- [ ] Learn SCSS and use SCSS. 
 ### Overview
 
 In this assignment, you'll create one of two possible computer games: Word Guess or Psychic. These apps will run in the browser, and feature dynamically updated HTML and CSS powered by your JavaScript code.
