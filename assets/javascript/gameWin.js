@@ -35,7 +35,7 @@
 				preview: "https://animethemes.moe/video/Evangelion-OP1.webm"
 			},
 			DragonBallZ: {
-				video: "Dragon Ball Z",
+				video: "Draon Ball Z",
 				preview: "https://animethemes.moe/video/DragonBallZ-OP1.webm"
 			},
 			Flcl: {

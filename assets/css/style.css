@@ -1,5 +1,5 @@
 * {
-	margin: 0px;
+	margin: 0;
 }
 
 html {
@@ -13,41 +13,52 @@ html {
 	margin: 0;
 	flex: 1;
 	z-index: -1px;
+
 }
 
-#introVideo, #video > iframe {
-position: fixed;
-display: block;
-border: 0;
-border-width: 0s
-margin: 0;
-top: 50%;
-left: 50%;
-max-width: 100%;
-min-height: 100%;
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: center;
-z-index: -1;
-overflow:hidden;
-overflow-x:hidden;
-overflow-y:hidden;
-background-color: linear-gradient(rgba(0, 0, 0, 0.50), 
-rgba(0, 0, 0, 0.50));
-background: linear-gradient(rgba(0, 0, 0, 0.50), rgba
-(0, 0, 0, 0.50));
-transform: translateX(-50%) translateY(-50%);
+#video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: center;
+	z-index: -1;
+	background-color: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+	transform: translateX(-50%) translateY(-50%);
 }
 
-.container { 
-position: relative;
-bottom: -40px;
+#introVideo {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: center;
+	z-index: -1;
+	background-color: linear-gradient(rgba(0, 0, 0, 0.50),
+			rgba(0, 0, 0, 0.50));
+	background: linear-gradient(rgba(0, 0, 0, 0.50), rgba (0, 0, 0, 0.50));
+	transform: translateX(-50%) translateY(-50%);
 }
 
-#playButton, #playButton:hover {
+.container {
+	position: relative;
+	bottom: -40px;
+}
+
+#playButton,
+#playButton:hover {
 	font-family: 'Dancing Script', cursive;
 	font-size: 200px;
-	text-align: center; 
+	text-align: center;
 	color: ivory;
 	position: relative;
 	bottom: -200px;
@@ -65,12 +76,13 @@ bottom: -40px;
 	justify-content: center;
 }
 
-#animePick > h4 {
+#animePick>h4 {
 	font-size: 50px !important;
 
 }
 
-#animeTitle, #animeTitle2 {
+#animeTitle,
+#animeTitle2 {
 	font-family: 'Dancing Script', cursive;
 	font-size: 50px;
 	color: ivory;
@@ -86,33 +98,34 @@ bottom: -40px;
 	margin: 20px;
 }
 
-#movieBtn:hover, #showBtn:hover {
+#movieBtn:hover,
+#showBtn:hover {
 	background: black;
 	color: white;
 }
 
 #hangman {
-border-radius: 20px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-min-width: 100%;
-max-height: 100%;
-position: relative;
-display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
-flex-direction: row;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	min-width: 100%;
+	max-height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 img {
-	height: 200px; 
-	width: 175px !important; 
+	height: 200px;
+	width: 175px !important;
 	position: relative;
 	top: 5px !important;
 	border-radius: 20px !important;
 }
 
 
-.carousel > .carousel-item {
+.carousel>.carousel-item {
 	position: relative;
 	top: -80px !important;
 	background-color: ivory;
@@ -122,7 +135,7 @@ img {
 	border-radius: 30px;
 }
 
-#gifyInput{ 
+#gifyInput {
 	text-align: center;
 	position: relative;
 	bottom: 180px;
@@ -151,67 +164,74 @@ img {
 	position: relative;
 }
 
-#wrong-guesses, #guesses-left, #letters-guessed, #win-counter, #loss-counter {
-margin: 20px;
+#wrong-guesses,
+#guesses-left,
+#letters-guessed,
+#win-counter,
+#loss-counter {
+	margin: 20px;
 }
 
-#gifyButtons > a {
+#gifyButtons>a {
 	color: ivory;
 	cursor: pointer;
 	position: relative;
-	top: -200px; 
+	top: -200px;
 	right: -300px;
 	margin: 5px;
-	display: flex !important; 
-	flex-flow: row !important; 
+	display: flex !important;
+	flex-flow: row !important;
 	flex-direction: row !important;
 	flex-wrap: wrap;
-}	
+}
 
 #gifyButtons {
 	max-width: 500px !important;
 }
-	
+
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 12px;  /* Preferred icon size */
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12px;
+	/* Preferred icon size */
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+	/* Support for IE. */
+	font-feature-settings: 'liga';
 }
 
 @font-face {
-font-family: 'Material Icons';
-font-style: normal;
-font-weight: 400;
-src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
-src: local('Material Icons'),
-local('MaterialIcons-Regular'),
-url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://example.com/MaterialIcons-Regular.eot);
+	/* For IE6-8 */
+	src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+		url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+		url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 @media screen and (min-width: 600px) {
 	div.example {
 		font-size: 80px;
 	}
+
 	@media (min-aspect-ratio: 16/9) {
 		#video {
 			width: 100%;
@@ -221,107 +241,113 @@ url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 @media (max-aspect-ratio: 16/9) {
-	#animePick { 
-	top: 225px !important;
-	position: relative;
+	#animePick {
+		top: 225px !important;
+		position: relative;
 	}
-	#animePick > h4 {
-	font-size: 75px !important;
-	} 
+
+	#animePick>h4 {
+		font-size: 75px !important;
+	}
+
 	#gifyButtons {
-	flex-flow: wrap;
-}
+		flex-flow: wrap;
+	}
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media screen and (max-width: 600px) {
 	@media only screen and (max-width: 600px) {
-	#animePick { 
-	top: 100px !important;
-	position: relative;
-	}
-	#animePick > h4 {
-	font-size: 50px !important;
-	}
-	.carousel {
-	min-width: 300px !important;
-	max-height: 500px !important;
-	position: relative;
-	top: -50px !important;
-	}	
+		#animePick {
+			top: 100px !important;
+			position: relative;
+		}
 
-	.carousel > .carousel-item {
-	width: 175px !important;
-	height: 200px !important;
-	}
-	.card-action > a {
-	position: relative;
-	top: 4px !important;
+		#animePick>h4 {
+			font-size: 50px !important;
+		}
+
+		.carousel {
+			min-width: 300px !important;
+			max-height: 500px !important;
+			position: relative;
+			top: -50px !important;
+		}
+
+		.carousel>.carousel-item {
+			width: 175px !important;
+			height: 200px !important;
+		}
+
+		.card-action>a {
+			position: relative;
+			top: 4px !important;
+		}
+
+		img {
+			width: 150px !important;
+			height: 150px !important;
+		}
+
+		#gifyButtons>.animeButton,
+		a,
+		.material-icons {
+			margin: 5px;
+			flex-flow: row !important;
+			flex-direction: row !important;
+			justify-content: space-evenly !important;
+			position: relative;
+			right: 0px;
+			top: -110px;
+			font-size: 12px;
+			flex-wrap: wrap !important;
+		}
+
+		#wrong-guesses,
+		#guesses-left,
+		#letters-guessed,
+		#win-counter,
+		#loss-counter {
+			margin: 5px;
+		}
+
+		#scoreboard {
+			font-size: 12px !important;
+			display: flex;
+			flex-direction: row !important;
+			position: relative;
+			max-width: 100px;
+			right: -100px !important;
+			top: -320px !important;
+			margin: 5px;
+		}
+
+		#gifyInput {
+			position: relative;
+			top: -260px;
+		}
 	}
 
-	img {
-	width: 150px !important; 
-	height: 150px !important;
-	}
-
-	#gifyButtons > .animeButton, a, .material-icons{
-	margin: 5px;
-	flex-flow: row !important;
-	flex-direction: row !important;
-	justify-content: space-evenly !important;
-	position: relative;
-	right: 0px;
-	top: -110px;
-	font-size: 12px;
-	flex-wrap: wrap !important;
-	}
-
-	#wrong-guesses, #guesses-left, #letters-guessed, #win-counter, 
-	#loss-counter {
-	margin: 5px;
-	}
-	
-	#scoreboard {
-	font-size: 12px !important;
-	display: flex;
-	flex-direction: row !important;
-	position: relative;
-	max-width: 100px;
-	right: -100px !important;
-	top: -320px !important;
-	margin: 5px;
-	}
-
-	#gifyInput {
-	position: relative;
-	top: -260px;
-	}
 }
-		
-}
 
-	/* Small devices (portrait tablets and large phones, 600px and up) */
-	@media only screen and (min-width: 600px) {
-		#animePick { 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	#animePick {
 		top: 200px !important;
 		position: relative;
-		}
-		#animePick > h4 {
+	}
+
+	#animePick>h4 {
 		font-size: 75px !important;
-		
-	}
-	}
-
-	/* Medium devices (landscape tablets, 768px and up) */
-	@media only screen and (min-width: 768px) {
-		
-	}
-
-	/* Large devices (laptops/desktops, 992px and up) */
-	@media only screen and (min-width: 992px) {
 
 	}
+}
 
-	/* Extra large devices (large laptops and desktops, 1200px and up) */
-	@media only screen and (min-width: 1200px) {
-	}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
