@@ -30,6 +30,22 @@
 - [ ] Game is not mobile responsive on MacBook. Fix the game to become mobile responsive for all devices.
 - [ ] Learn FLEXBOX and use FLEXBOX.
 - [ ] Learn SCSS and use SCSS. 
+### Introduction to Game Javascript 
+- [X] Add introduction video (WindRises) when user begins game. 
+- [X] Add play button at end of the WindRises introduction video. Video ends at 26 seconds.
+- [X] Custom background and soundtrack plays after the end of introduction video.
+- [X] Add menu option for user to choose to play "Guess that Anime Movie" or "Guess that Anime Show" word guess game.
+### Added Features 
+- [X] Add Materialize Carousel for Giphy Items when User wins game and replace Scoreboard. 
+
+### Wins Game
+- [X] When user wins game it triggers giphy prize.
+- [X] User can search, receive, and add to the carousel up to 5 appropriate giphy images at one time.
+- [X] User can animate their giphy images when they hover over giphy image.
+- [X] User can download giphy.
+- [X] User can add and delete giphy buttons.
+- [ ] Game's background triggers video, when user wins "Guess that Anime Show" game.
+- [ ] Game's background triggers video, when user wins "Guess that Anime Movie" game. 
 ### Overview
 
 In this assignment, you'll create one of two possible computer games: Word Guess or Psychic. These apps will run in the browser, and feature dynamically updated HTML and CSS powered by your JavaScript code.

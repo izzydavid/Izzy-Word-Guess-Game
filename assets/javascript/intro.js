@@ -6,7 +6,8 @@ $(document).ready(function (e) {
 	});
 	e.preventDefault(e); 
 	M.AutoInit();
-}); 
+});
+
 
 setTimeout(function () {
 	$("#introVideo")[0].play(); 
